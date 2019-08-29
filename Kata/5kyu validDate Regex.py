@@ -1,6 +1,9 @@
-'''Your task is to write a regular expression (regex) that will match a string only if it contains at least one valid date, in the format [mm-dd] (that is, a two-digit month, followed by a dash, followed by a two-digit date, surrounded by square brackets).
+'''Your task is to write a regular expression (regex) that will match a string only if it contains at least one
+valid date, in the format [mm-dd] (that is, a two-digit month, followed by a dash, followed by a two-digit date,
+surrounded by square brackets).
 
-You should assume the year in question is not a leap year. Therefore, the number of days each month should have are as follows:
+You should assume the year in question is not a leap year. Therefore, the number of days each month should have
+are as follows:
 
 1. January - 31 days
 2. February - 28 days (leap years are ignored)
