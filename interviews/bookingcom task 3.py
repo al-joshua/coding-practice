@@ -1,5 +1,18 @@
 #!/usr/bin/env python
 
+"""Write a script that will return the unique names of the files inside a directory with the following conditions:
+ - Do not print the path
+ - Do not print the extension
+ - File names must be unique
+ - File names must be alphabetically sorted
+ - if the file is a symbolik link return the target file
+ - Exclude directories names and do not recurse into subdirectories
+ - SCript has to be an executable file
+ - Script also must:
+    - Print "ERROR: you need specify a directory" if we dont pass any argument to the script
+    - Print "ERROR" argument is no valid " if we try to pass any argument that is not a directory
+"""
+
 import os
 import sys
 import re
