@@ -17,6 +17,7 @@ alternating_split(list).first == 1 -> 3 -> 5 -> None
 alternating_split(list).second == 2 -> 4 -> None
 ###Ruby
 
+
 list = 1 -> 2 -> 3 -> 4 -> 5 -> nil
 alternating_split(list).first == 1 -> 3 -> 5 -> nil
 alternating_split(list).second == 2 -> 4 -> nil
