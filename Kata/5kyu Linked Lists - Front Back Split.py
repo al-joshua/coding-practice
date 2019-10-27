@@ -22,6 +22,9 @@ at a time, while the "fast" pointer goes two nodes at a time. When the fast poin
 the slow pointer will be about half way. For either strategy, care is required to split the list at the right point."""
 
 
+import Linked_Lists as ll
+
+
 """ For your information:"""
 class Node(object):
     def __init__(self, data=None):
@@ -29,4 +32,30 @@ class Node(object):
         self.next = None
 
 
+class Context(object):
+    def __init__(self, first, second):
+        self.first = first
+        self.second = second
 
+
+def front_back_split(source, front, back):
+    if bool(source and front and back) == False:
+        raise Exception('Incorrect input')
+
+    if source.data is None or source.next is None:
+        raise Exception('Source is 0 or 1 nodes')
+
+    if source.next.next is None:
+        front.data = source.data
+        back.data = source.next.data
+
+    else:
+        curr_slow = curr_fast = source
+
+        while curr_fast.next and curr_fast.next.next:
+            curr_slow = curr_slow.next
+            curr_fast = curr_fast.next.next
+
+        back.data, back.next = curr_slow.next.data, curr_slow.next.next
+        curr_slow.next = None
+        front.data, front.next = source.data, source.next
