@@ -67,9 +67,9 @@ def id_best_users(*args):
 
     dct = {}
     print(intersec)
-    for id in intersec:
-        if counter[id] in dct:
-            dct[counter[id]].append(id)
+    for i in intersec:
+        if counter[i] in dct:
+            dct[counter[i]].append(i)
         else:
-            dct.update({counter[id]: [id]})
+            dct.update({counter[i]: [i]})
     return sorted([[k, sorted(v)] for k, v in dct.items()], reverse=True)
