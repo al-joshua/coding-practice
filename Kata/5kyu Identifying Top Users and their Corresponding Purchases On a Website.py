@@ -64,12 +64,13 @@ def id_best_users(*args):
 
     intersec = set.intersection(*(set(arg) for arg in args))
     counter = Counter(chain(*args))
-
     dct = {}
-    print(intersec)
+
     for i in intersec:
         if counter[i] in dct:
             dct[counter[i]].append(i)
         else:
             dct.update({counter[i]: [i]})
+
     return sorted([[k, sorted(v)] for k, v in dct.items()], reverse=True)
+
