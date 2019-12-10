@@ -1,4 +1,4 @@
-# coding-practise 
+# coding-practice 
 ## Kata
 ##### _my codewars.com kata solutions_ 
 
