@@ -20,5 +20,4 @@ Kyu digit determines kata's difficulty level as well as user's rank on a website
 
 ##### _some tasks from different interviews I did_
 
-I took some coding interviews to Facebook and Booking.com. Being a beginner I was unlucky to pass. I took my time later
-and here are my solutions to the tasks I was challenged.
+I took some coding interviews to Facebook and Booking.com. Here are my solutions to the tasks I was challenged.
