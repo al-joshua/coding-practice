@@ -15,6 +15,10 @@ eg:
 125.21.198.150 33
 '''
 
+from collections import Counter
+
+
+# First variant of the solution
 
 def func_sort(item):
     return item[1]
@@ -27,7 +31,7 @@ def process_data(file):
     arr = data.splitlines()
     for ip in set(arr):
         count = arr.count(ip)
-        res.append((ip,count))
+        res.append((ip, count))
     res.sort(key=func_sort, reverse=True)
     return res
 
@@ -37,6 +41,19 @@ def main():
     for i in range(10):
         print('{} {}'.format(res[i][0], res[i][1]))
 
+# This is a  second more optimal solution utilising the collections.Counter object
+
+def solution_2(file):
+
+    with open(file, 'r') as f:
+        data = f.read()
+
+    counter = Counter(data.splitlines())
+
+    for ip, count in counter.most_common(10):
+        print(ip, count)
+
 
 if __name__ == '__main__':
-    main()
+    # main()
+    solution_2('logfile')
