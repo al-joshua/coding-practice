@@ -9,8 +9,8 @@ following format:
 - scipt has to be executable file
 
 eg:
-$ ./bookingcom\ task\ 2.py 2234,2234,765345,22,31234,31234,99756,189,189,189,31234,22
-2234:2,765345,22,31234:2,99756,189:4,31234,22:1
+$ ./bcom_task_2.py 2234,2234,765345,22,31234,31234,99756,189,189,189,31234,22
+2234,22:2,765345,99756:1,31234,189:3
 """
 
 import sys
@@ -18,27 +18,21 @@ import sys
 
 def counts(data):
     dct = {}
-    for id in set(data):
+    for id in data:
         c = data.count(id)
-        if str(c) in dct.keys():
-            dct[str(c)].append(id)
-        else:
-           dct.update({str(c): [id]})
-    return dct
+        if c not in dct:
+            dct.update({c: [id]})
+        elif id not in dct[c]:
+            dct[c].append(id)
 
+    result = ','.join([','.join(map(str, v)) + ':' + str(k) for k, v in dct.items()])
 
-def formatter(arg):
-    res = []
-    d = counts(arg)
-    for k in d:
-        s = '{}:{}'.format(','.join(d[k]), k)
-        res.append(s)
-    return ','.join(res)
+    return result
 
 
 def main():
     input = sys.argv[1].split(',')
-    print(formatter(input))
+    print(counts(input))
 
 
 if __name__ == '__main__':
